@@ -7,6 +7,16 @@
 
 import UIKit
 
+extension UIButton {
+    func attributedTitle(_ firstPart: String, _ secondPart: String) {
+        let atts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.87), .font: UIFont.systemFont(ofSize: 16)]
+        let boldAtts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.87), .font: UIFont.systemFont(ofSize: 16, weight: .bold)]
+        let attributedTitle = NSMutableAttributedString(string: "\(firstPart) ", attributes: atts)
+        attributedTitle.append(NSAttributedString(string: "\(secondPart)", attributes: boldAtts))
+        setAttributedTitle(attributedTitle, for: .normal)
+    }
+}
+
 extension UIView {
     func anchor(top: NSLayoutYAxisAnchor? = nil,
                 left: NSLayoutXAxisAnchor? = nil,
