@@ -6,40 +6,50 @@
 //
 
 import UIKit
+import PhotosUI
 
 class RegistrationController : UIViewController {
+    // MARK: - Variables
+    private var viewModel = RegistrationViewModel()
+    
     // MARK: - Properties
-    private let plusPhotoButton: UIButton = {
+    private lazy var plusPhotoButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setImage(UIImage(named: "plus_photo"), for: .normal)
         btn.tintColor = .white
+        btn.addTarget(self, action: #selector(didTapPlusPhotoButton), for: .touchUpInside)
         return btn
     }()
     
-    private let emailTextField: UITextField = {
+    private lazy var emailTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Email")
         tf.keyboardType = .emailAddress
+        tf.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         return tf
     }()
     
-    private let passwordTextField: UITextField = {
+    private lazy var passwordTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Password")
         tf.isSecureTextEntry = true
+        tf.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         return tf
     }()
     
-    private let fullNameTextField: UITextField = {
+    private lazy var fullNameTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Fullname")
+        tf.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         return tf
     }()
     
-    private let userNameTextField: UITextField = {
+    private lazy var userNameTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Username")
+        tf.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         return tf
     }()
     
-    private let signUpButton: UIButton = {
+    private lazy var signUpButton: UIButton = {
         let btn = CustomButton("Sign Up")
+        btn.addTarget(self, action: #selector(didTapSignUpButton), for: .touchUpInside)
         return btn
     }()
     
@@ -67,7 +77,7 @@ class RegistrationController : UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
+    
     
     // MARK: - Set up UI
     func setupUI() {
@@ -95,8 +105,59 @@ class RegistrationController : UIViewController {
     
     // MARK: - Selectors
     @objc func handleShowLogin() {
-        print(#function)        
+        print(#function)
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func textDidChange(sender: UITextField) {
+        //        print(#function)
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else if sender == passwordTextField {
+            viewModel.password = sender.text
+        } else if sender == fullNameTextField {
+            viewModel.fullName = sender.text
+        } else {
+            viewModel.userName = sender.text
+        }
+        
+        updateForm()
+    }
+    
+    @objc func didTapSignUpButton() {
+        print(#function)
+    }
+    
+    @objc func didTapPlusPhotoButton() {
+        let picker = UIImagePickerController()
+        
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        present(picker, animated: true, completion: nil)
+    }
+}
+    
+// MARK: - Extension
+extension RegistrationController: FormViewModel {
+    func updateForm() {
+        signUpButton.backgroundColor = viewModel.buttonBackgroundColor
+        signUpButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        signUpButton.isEnabled = viewModel.formIsValid
     }
 }
 
+extension RegistrationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // 이미지 캐스팅
+        guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        
+        plusPhotoButton.layer.masksToBounds = true
+        plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.width/2
+        plusPhotoButton.layer.borderColor = UIColor.white.cgColor
+        plusPhotoButton.layer.borderWidth = 1
+        plusPhotoButton.setImage(selectedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+}
