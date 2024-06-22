@@ -29,20 +29,13 @@ class LoginController: UIViewController {
     }()
     
     private let loginButton: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("Log In", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
-        btn.layer.masksToBounds = true
-        btn.layer.cornerRadius = 5
-        btn.setHeight(50)
-        btn.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        let btn = CustomButton("Log In")
         return btn
     }()
     
     private let forgotPasswordButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.attributedTitle("Forgot your password", "Get help signing in.")
+        btn.attributedTitle("Forgot your password?", "Get help signing in.")
         return btn
     }()
     
@@ -53,9 +46,10 @@ class LoginController: UIViewController {
         return sv
     }()
     
-    private let dontHaveAccoutButton: UIButton = {
+    private lazy var dontHaveAccoutButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.attributedTitle("Don't have an account? ", "Sign Up")
+        btn.attributedTitle("Don't have an account?", "Sign Up")
+        btn.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return btn
     }()
     
@@ -79,11 +73,7 @@ class LoginController: UIViewController {
         self.view.backgroundColor = .systemBackground
         
         // 그라디언트
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor] // 그라디언트 사용 시 마지막에 .cgColor 붙여야 함
-        gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
+        setupGradientLayer()
         
         self.view.addSubview(iconImage)
         self.view.addSubview(stackView)
@@ -102,5 +92,12 @@ class LoginController: UIViewController {
         
         dontHaveAccoutButton.centerX(inView: view)
         dontHaveAccoutButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
+    }
+    
+    // MARK: - Selectors
+    @objc func handleShowSignUp() {
+        print(#function)
+        let controller = RegistrationController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 }

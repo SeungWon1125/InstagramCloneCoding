@@ -17,6 +17,7 @@
 		E3B62C3A2C26FB2100E897A1 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62C392C26FB2100E897A1 /* LoginController.swift */; };
 		E3B62C3C2C26FB3400E897A1 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62C3B2C26FB3400E897A1 /* RegistrationController.swift */; };
 		E3B62C3E2C27042000E897A1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62C3D2C27042000E897A1 /* CustomTextField.swift */; };
+		E3B62C402C2712D800E897A1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62C3F2C2712D800E897A1 /* CustomButton.swift */; };
 		E3CCEAD22C26A71300634108 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CCEAD12C26A71300634108 /* MainTabController.swift */; };
 		E3CCEAD42C26A84C00634108 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CCEAD32C26A84C00634108 /* FeedController.swift */; };
 		E3CCEAD62C26A85100634108 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CCEAD52C26A85100634108 /* SearchController.swift */; };
@@ -60,6 +61,7 @@
 		E3B62C392C26FB2100E897A1 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		E3B62C3B2C26FB3400E897A1 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		E3B62C3D2C27042000E897A1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		E3B62C3F2C2712D800E897A1 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		E3CCEAD12C26A71300634108 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		E3CCEAD32C26A84C00634108 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
 		E3CCEAD52C26A85100634108 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			children = (
 				E3CCEB1C2C26BF3700634108 /* FeedCell.swift */,
 				E3B62C3D2C27042000E897A1 /* CustomTextField.swift */,
+				E3B62C3F2C2712D800E897A1 /* CustomButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				E3CCEAD22C26A71300634108 /* MainTabController.swift in Sources */,
 				E330BEF92C26A4F100D877B1 /* SceneDelegate.swift in Sources */,
 				E3CCEB202C26C02300634108 /* Constants.swift in Sources */,
+				E3B62C402C2712D800E897A1 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

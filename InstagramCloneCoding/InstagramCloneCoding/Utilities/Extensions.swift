@@ -7,6 +7,16 @@
 
 import UIKit
 
+extension UIViewController {
+    func setupGradientLayer() {
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor] // 그라디언트 사용 시 마지막에 .cgColor 붙여야 함
+        gradient.locations = [0, 1]
+        view.layer.addSublayer(gradient)
+        gradient.frame = view.frame
+    }
+}
+
 extension UIButton {
     func attributedTitle(_ firstPart: String, _ secondPart: String) {
         let atts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.87), .font: UIFont.systemFont(ofSize: 16)]
