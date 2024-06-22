@@ -20,7 +20,7 @@ class FeedController: UICollectionViewController {
     // MARK: - Set up CollectionView
     func setupCollectionView() {
         // 셀 등록
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: Cell.feedCellIdentifier)
+        collectionView.register(FeedCell.self, forCellWithReuseIdentifier: Cell.feedCellIdentifier)
     }
     
     // MARK: - Set up UI
@@ -38,8 +38,7 @@ extension FeedController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.feedCellIdentifier, for: indexPath)
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.feedCellIdentifier, for: indexPath) as! FeedCell
         return cell
     }
 }
