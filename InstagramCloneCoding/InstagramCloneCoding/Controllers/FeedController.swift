@@ -47,7 +47,12 @@ extension FeedController {
 extension FeedController: UICollectionViewDelegateFlowLayout {
     // 셀의 사이즈를 결정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let widthSize = view.frame.width
-        return CGSize(width: widthSize, height: 200)
+        var heightSize = widthSize + 8 + 40 + 8 // 프사 위 패딩 + 프사 높이 + 프사 아래 패딩
+        heightSize += 50 // 포스트 이미지 뷰 높이
+        heightSize += 60 // 나머지 아래 높이
+        
+        return CGSize(width: widthSize, height: heightSize)
     }
 }

@@ -23,6 +23,7 @@
 		E3CCEADC2C26A86B00634108 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CCEADB2C26A86B00634108 /* ProfileController.swift */; };
 		E3CCEB1D2C26BF3700634108 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CCEB1C2C26BF3700634108 /* FeedCell.swift */; };
 		E3CCEB202C26C02300634108 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CCEB1F2C26C02300634108 /* Constants.swift */; };
+		E3CCEB222C26C1C100634108 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CCEB212C26C1C100634108 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		E3CCEADB2C26A86B00634108 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		E3CCEB1C2C26BF3700634108 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		E3CCEB1F2C26C02300634108 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E3CCEB212C26C1C100634108 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		E3CCEACB2C26A66C00634108 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E3CCEB212C26C1C100634108 /* Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				E330BEF72C26A4F100D877B1 /* AppDelegate.swift in Sources */,
 				E3CCEAD42C26A84C00634108 /* FeedController.swift in Sources */,
 				E3CCEADC2C26A86B00634108 /* ProfileController.swift in Sources */,
+				E3CCEB222C26C1C100634108 /* Extensions.swift in Sources */,
 				E3CCEAD82C26A85A00634108 /* ImageSelectController.swift in Sources */,
 				E3CCEAD22C26A71300634108 /* MainTabController.swift in Sources */,
 				E330BEF92C26A4F100D877B1 /* SceneDelegate.swift in Sources */,
