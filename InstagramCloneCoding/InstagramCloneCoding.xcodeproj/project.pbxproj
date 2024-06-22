@@ -21,6 +21,7 @@
 		E3CCEAD82C26A85A00634108 /* ImageSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CCEAD72C26A85A00634108 /* ImageSelectController.swift */; };
 		E3CCEADA2C26A86400634108 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CCEAD92C26A86400634108 /* NotificationController.swift */; };
 		E3CCEADC2C26A86B00634108 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CCEADB2C26A86B00634108 /* ProfileController.swift */; };
+		E3CCEADF2C26B13700634108 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CCEADE2C26B13700634108 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		E3CCEAD72C26A85A00634108 /* ImageSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectController.swift; sourceTree = "<group>"; };
 		E3CCEAD92C26A86400634108 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		E3CCEADB2C26A86B00634108 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		E3CCEADE2C26B13700634108 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		E330BEF52C26A4F100D877B1 /* InstagramCloneCoding */ = {
 			isa = PBXGroup;
 			children = (
+				E3CCEADD2C26B12800634108 /* Constant */,
 				E3CCEAD02C26A6AC00634108 /* Models */,
 				E3CCEACF2C26A6A600634108 /* Views */,
 				E3CCEACE2C26A6A000634108 /* ViewModels */,
@@ -188,6 +191,14 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E3CCEADD2C26B12800634108 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				E3CCEADE2C26B13700634108 /* Helpers.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +334,7 @@
 				E330BEFB2C26A4F100D877B1 /* ViewController.swift in Sources */,
 				E3CCEAD62C26A85100634108 /* SearchController.swift in Sources */,
 				E3CCEADA2C26A86400634108 /* NotificationController.swift in Sources */,
+				E3CCEADF2C26B13700634108 /* Helpers.swift in Sources */,
 				E330BEF72C26A4F100D877B1 /* AppDelegate.swift in Sources */,
 				E3CCEAD42C26A84C00634108 /* FeedController.swift in Sources */,
 				E3CCEADC2C26A86B00634108 /* ProfileController.swift in Sources */,
