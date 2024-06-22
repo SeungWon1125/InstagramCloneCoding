@@ -57,12 +57,17 @@ class RegistrationController : UIViewController {
         return btn
     }()
     
-    // MARK: - Life Cycle
+    // MARK: - Life Cycle ⭐️
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
     
     // MARK: - Set up UI
     func setupUI() {

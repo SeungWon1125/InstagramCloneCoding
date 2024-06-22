@@ -8,6 +8,9 @@
 import UIKit
 
 class LoginController: UIViewController {
+    // MARK: - Variables
+    private var viewModel = LoginViewModel()
+    
     // MARK: - Properties
     private let iconImage: UIImageView = {
         let iv = UIImageView()
@@ -16,20 +19,24 @@ class LoginController: UIViewController {
         return iv
     }()
     
-    private let emailTextField: UITextField = {
+    private lazy var emailTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Email")
         tf.keyboardType = .emailAddress
+        tf.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         return tf
     }()
     
-    private let passwordTextField: UITextField = {
+    private lazy var passwordTextField: UITextField = {
         let tf = CustomTextField(placeholder: "Password")
         tf.isSecureTextEntry = true
+        tf.textContentType = .oneTimeCode
+        tf.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         return tf
     }()
     
-    private let loginButton: UIButton = {
+    private lazy var loginButton: UIButton = {
         let btn = CustomButton("Log In")
+        btn.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
         return btn
     }()
     
@@ -53,14 +60,20 @@ class LoginController: UIViewController {
         return btn
     }()
     
-    // MARK: - Life Cycle
+    // MARK: - Life Cycle ⭐️
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         setupNavigationBar()
+//        configureNotificationObservers()
         
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
     
     // MARK: - Set up Navigation Bar
     func setupNavigationBar() {
@@ -99,5 +112,28 @@ class LoginController: UIViewController {
         print(#function)
         let controller = RegistrationController()
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func textDidChange(sender: UITextField) {
+//        print(#function)
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else {
+            viewModel.password = sender.text
+        }
+        
+        loginButton.backgroundColor = viewModel.buttonBackgroundColor
+        loginButton.setTitleColor(viewModel.ButtonTitleColor, for: .normal)
+        loginButton.isEnabled = viewModel.formIsValid
+    }
+    
+    @objc func didTapLoginButton() {
+        print(#function)
+    }
+    
+    // MARK: - Configure Notification Observers
+    func configureNotificationObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 }
