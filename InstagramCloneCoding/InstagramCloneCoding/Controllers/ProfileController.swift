@@ -17,6 +17,12 @@ class ProfileController: UIViewController {
         self.view.backgroundColor = .systemBackground
         
         setupCollectionView()
+        setupNavigationBar()
+    }
+    // MARK: - Set up NavigationBar
+    func setupNavigationBar() {
+        navigationController?.navigationBar.backgroundColor = .systemPink
+        navigationItem.title = "Profile"
     }
     
     // MARK: - Set up CollectionView
