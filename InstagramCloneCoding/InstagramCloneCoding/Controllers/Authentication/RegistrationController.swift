@@ -11,6 +11,7 @@ import PhotosUI
 class RegistrationController : UIViewController {
     // MARK: - Variables
     private var viewModel = RegistrationViewModel()
+    private var profileImage: UIImage?
     
     // MARK: - Properties
     private lazy var plusPhotoButton: UIButton = {
@@ -126,6 +127,27 @@ class RegistrationController : UIViewController {
     
     @objc func didTapSignUpButton() {
         print(#function)
+        // 텍스트필드에서 가져오는 String은 항상 Optional이기 때문에 guard let tkdyd
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullName = fullNameTextField.text else { return }
+        guard let userName = userNameTextField.text else { return }
+        guard let profileImage = self.profileImage else { return }
+        
+        let credentials = AuthCredentials(email: email,
+                                          password: password,
+                                          fullName: fullName,
+                                          userName: userName,
+                                          profileImage: profileImage)
+        
+        AuthService.registerUser(withCredential: credentials) { error in
+            if let error = error {
+                print("auth 연결 실패 \(error.localizedDescription)")
+                return
+            }
+            
+            print("회원가입 성공")
+        }
     }
     
     @objc func didTapPlusPhotoButton() {
@@ -151,6 +173,7 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // 이미지 캐스팅
         guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        profileImage = selectedImage // 데이터
         
         plusPhotoButton.layer.masksToBounds = true
         plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.width/2
