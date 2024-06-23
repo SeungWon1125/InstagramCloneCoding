@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedController: UICollectionViewController {
     
@@ -15,7 +16,14 @@ class FeedController: UICollectionViewController {
         
         setupUI()
         setupCollectionView()
+        setupNavigationBar()
     }
+    // MARK: - Set up NavigationBar
+    func setupNavigationBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(didTapLogoutButton))
+        navigationItem.title = "Feed"
+    }
+    
     
     // MARK: - Set up CollectionView
     func setupCollectionView() {
@@ -26,6 +34,19 @@ class FeedController: UICollectionViewController {
     // MARK: - Set up UI
     func setupUI() {
         collectionView.backgroundColor = .systemBackground
+    }
+    
+    // MARK: - Selectors
+    @objc func didTapLogoutButton() {
+        do {
+            try Auth.auth().signOut()
+            let controller = LoginController()
+            let nav = UINavigationController(rootViewController: controller)
+            nav.modalPresentationStyle = .fullScreen
+            self.present(nav, animated: true, completion: nil)
+        } catch {
+            print("로그아웃 실패")
+        }
     }
 }
 

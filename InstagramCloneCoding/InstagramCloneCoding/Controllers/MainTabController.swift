@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainTabController: UITabBarController {
     
@@ -15,6 +16,20 @@ class MainTabController: UITabBarController {
         
         view.backgroundColor = .systemBackground
         configureViewControllers()
+        checkIfUserIsLoggedIn()
+
+    }
+    
+    // MARK: - API
+    func checkIfUserIsLoggedIn() {
+        if Auth.auth().currentUser == nil { // api호출이기 때문에
+            DispatchQueue.main.async { // 이거는 메인쓰레드로 보내야 한다.
+                let controller = LoginController()
+                let nav = UINavigationController(rootViewController: controller)
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true, completion: nil)
+            }
+        }
     }
     
     // MARK: - Configure ViewControllers

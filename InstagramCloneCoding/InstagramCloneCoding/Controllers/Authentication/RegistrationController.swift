@@ -147,6 +147,7 @@ class RegistrationController : UIViewController {
             }
             
             print("회원가입 성공")
+            self.dismiss(animated: true, completion: nil)
         }
     }
     

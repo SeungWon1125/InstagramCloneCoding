@@ -127,6 +127,17 @@ class LoginController: UIViewController {
     
     @objc func didTapLoginButton() {
         print(#function)
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        AuthService.logUserIn(withEmail: email, password: password) { (authResult, error) in
+            if let error = error {
+                print("로그인 실패\(error.localizedDescription)")
+                return
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+            
+        }
     }
     
     // MARK: - Configure Notification Observers
