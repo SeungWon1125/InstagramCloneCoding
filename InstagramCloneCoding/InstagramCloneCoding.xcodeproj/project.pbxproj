@@ -234,6 +234,23 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		E38DE66F2C281A85000849AE /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				E3B62C3D2C27042000E897A1 /* CustomTextField.swift */,
+				E3B62C3F2C2712D800E897A1 /* CustomButton.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		E38DE6702C281A94000849AE /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				E3CCEB1C2C26BF3700634108 /* FeedCell.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
 		E3B62C382C26FB0F00E897A1 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,10 +302,9 @@
 		E3CCEACF2C26A6A600634108 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E38DE6702C281A94000849AE /* Feed */,
+				E38DE66F2C281A85000849AE /* Global */,
 				E38DE66E2C2812A0000849AE /* Profile */,
-				E3CCEB1C2C26BF3700634108 /* FeedCell.swift */,
-				E3B62C3D2C27042000E897A1 /* CustomTextField.swift */,
-				E3B62C3F2C2712D800E897A1 /* CustomButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
