@@ -14,6 +14,8 @@
 		E330BF0E2C26A4F200D877B1 /* InstagramCloneCodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330BF0D2C26A4F200D877B1 /* InstagramCloneCodingTests.swift */; };
 		E330BF182C26A4F200D877B1 /* InstagramCloneCodingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330BF172C26A4F200D877B1 /* InstagramCloneCodingUITests.swift */; };
 		E330BF1A2C26A4F200D877B1 /* InstagramCloneCodingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330BF192C26A4F200D877B1 /* InstagramCloneCodingUITestsLaunchTests.swift */; };
+		E38DE66B2C28128F000849AE /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DE66A2C28128F000849AE /* ProfileCell.swift */; };
+		E38DE66D2C281298000849AE /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DE66C2C281298000849AE /* ProfileHeader.swift */; };
 		E3B62C3A2C26FB2100E897A1 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62C392C26FB2100E897A1 /* LoginController.swift */; };
 		E3B62C3C2C26FB3400E897A1 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62C3B2C26FB3400E897A1 /* RegistrationController.swift */; };
 		E3B62C3E2C27042000E897A1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62C3D2C27042000E897A1 /* CustomTextField.swift */; };
@@ -91,6 +93,8 @@
 		E330BF132C26A4F200D877B1 /* InstagramCloneCodingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramCloneCodingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E330BF172C26A4F200D877B1 /* InstagramCloneCodingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCloneCodingUITests.swift; sourceTree = "<group>"; };
 		E330BF192C26A4F200D877B1 /* InstagramCloneCodingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCloneCodingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E38DE66A2C28128F000849AE /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		E38DE66C2C281298000849AE /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		E3B62C392C26FB2100E897A1 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		E3B62C3B2C26FB3400E897A1 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		E3B62C3D2C27042000E897A1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -221,6 +225,15 @@
 			path = InstagramCloneCodingUITests;
 			sourceTree = "<group>";
 		};
+		E38DE66E2C2812A0000849AE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E38DE66A2C28128F000849AE /* ProfileCell.swift */,
+				E38DE66C2C281298000849AE /* ProfileHeader.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		E3B62C382C26FB0F00E897A1 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +285,7 @@
 		E3CCEACF2C26A6A600634108 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E38DE66E2C2812A0000849AE /* Profile */,
 				E3CCEB1C2C26BF3700634108 /* FeedCell.swift */,
 				E3B62C3D2C27042000E897A1 /* CustomTextField.swift */,
 				E3B62C3F2C2712D800E897A1 /* CustomButton.swift */,
@@ -468,6 +482,7 @@
 				E3B62C3A2C26FB2100E897A1 /* LoginController.swift in Sources */,
 				E3CCEB1D2C26BF3700634108 /* FeedCell.swift in Sources */,
 				E3B62C422C27218C00E897A1 /* AuthenticationViewModel.swift in Sources */,
+				E38DE66D2C281298000849AE /* ProfileHeader.swift in Sources */,
 				E330BEF72C26A4F100D877B1 /* AppDelegate.swift in Sources */,
 				E3B62C3C2C26FB3400E897A1 /* RegistrationController.swift in Sources */,
 				E3CCEAD42C26A84C00634108 /* FeedController.swift in Sources */,
@@ -475,6 +490,7 @@
 				E3CCEB222C26C1C100634108 /* Extensions.swift in Sources */,
 				E3CCEAD82C26A85A00634108 /* ImageSelectController.swift in Sources */,
 				E3CCEAD22C26A71300634108 /* MainTabController.swift in Sources */,
+				E38DE66B2C28128F000849AE /* ProfileCell.swift in Sources */,
 				E330BEF92C26A4F100D877B1 /* SceneDelegate.swift in Sources */,
 				E3CCEB202C26C02300634108 /* Constants.swift in Sources */,
 				E3B62C402C2712D800E897A1 /* CustomButton.swift in Sources */,
