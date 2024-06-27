@@ -16,6 +16,7 @@
 		E330BF1A2C26A4F200D877B1 /* InstagramCloneCodingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330BF192C26A4F200D877B1 /* InstagramCloneCodingUITestsLaunchTests.swift */; };
 		E38DE66B2C28128F000849AE /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DE66A2C28128F000849AE /* ProfileCell.swift */; };
 		E38DE66D2C281298000849AE /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DE66C2C281298000849AE /* ProfileHeader.swift */; };
+		E3A863432C2D624D009CD883 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A863422C2D624D009CD883 /* UserService.swift */; };
 		E3B62C3A2C26FB2100E897A1 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62C392C26FB2100E897A1 /* LoginController.swift */; };
 		E3B62C3C2C26FB3400E897A1 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62C3B2C26FB3400E897A1 /* RegistrationController.swift */; };
 		E3B62C3E2C27042000E897A1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B62C3D2C27042000E897A1 /* CustomTextField.swift */; };
@@ -95,6 +96,7 @@
 		E330BF192C26A4F200D877B1 /* InstagramCloneCodingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCloneCodingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E38DE66A2C28128F000849AE /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		E38DE66C2C281298000849AE /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
+		E3A863422C2D624D009CD883 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		E3B62C392C26FB2100E897A1 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		E3B62C3B2C26FB3400E897A1 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		E3B62C3D2C27042000E897A1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			children = (
 				E3FA15B32C27E1910048DC50 /* ImageUploader.swift */,
 				E3FA15B52C27E1990048DC50 /* AuthService.swift */,
+				E3A863422C2D624D009CD883 /* UserService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				E3CCEAD42C26A84C00634108 /* FeedController.swift in Sources */,
 				E3CCEADC2C26A86B00634108 /* ProfileController.swift in Sources */,
 				E3CCEB222C26C1C100634108 /* Extensions.swift in Sources */,
+				E3A863432C2D624D009CD883 /* UserService.swift in Sources */,
 				E3CCEAD82C26A85A00634108 /* ImageSelectController.swift in Sources */,
 				E3CCEAD22C26A71300634108 /* MainTabController.swift in Sources */,
 				E38DE66B2C28128F000849AE /* ProfileCell.swift in Sources */,

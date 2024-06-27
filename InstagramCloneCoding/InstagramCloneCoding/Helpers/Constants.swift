@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 public struct Cell {
     static let feedCellIdentifier = "feedCell"
@@ -13,3 +14,5 @@ public struct Cell {
     static let profileHeaderIdentifier = "profileHeader"
     private init() {}
 }
+
+let COLLECTION_USERS = Firestore.firestore().collection("users")
