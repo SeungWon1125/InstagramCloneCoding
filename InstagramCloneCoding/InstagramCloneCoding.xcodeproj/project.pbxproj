@@ -14,6 +14,7 @@
 		E330BF0E2C26A4F200D877B1 /* InstagramCloneCodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330BF0D2C26A4F200D877B1 /* InstagramCloneCodingTests.swift */; };
 		E330BF182C26A4F200D877B1 /* InstagramCloneCodingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330BF172C26A4F200D877B1 /* InstagramCloneCodingUITests.swift */; };
 		E330BF1A2C26A4F200D877B1 /* InstagramCloneCodingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E330BF192C26A4F200D877B1 /* InstagramCloneCodingUITestsLaunchTests.swift */; };
+		E379E7A22C3151DF00F1C878 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E379E7A12C3151DF00F1C878 /* User.swift */; };
 		E38DE66B2C28128F000849AE /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DE66A2C28128F000849AE /* ProfileCell.swift */; };
 		E38DE66D2C281298000849AE /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38DE66C2C281298000849AE /* ProfileHeader.swift */; };
 		E3A863432C2D624D009CD883 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A863422C2D624D009CD883 /* UserService.swift */; };
@@ -94,6 +95,7 @@
 		E330BF132C26A4F200D877B1 /* InstagramCloneCodingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramCloneCodingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E330BF172C26A4F200D877B1 /* InstagramCloneCodingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCloneCodingUITests.swift; sourceTree = "<group>"; };
 		E330BF192C26A4F200D877B1 /* InstagramCloneCodingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramCloneCodingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E379E7A12C3151DF00F1C878 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E38DE66A2C28128F000849AE /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		E38DE66C2C281298000849AE /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		E3A863422C2D624D009CD883 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 		E3CCEAD02C26A6AC00634108 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E379E7A12C3151DF00F1C878 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				E3B62C422C27218C00E897A1 /* AuthenticationViewModel.swift in Sources */,
 				E38DE66D2C281298000849AE /* ProfileHeader.swift in Sources */,
 				E330BEF72C26A4F100D877B1 /* AppDelegate.swift in Sources */,
+				E379E7A22C3151DF00F1C878 /* User.swift in Sources */,
 				E3B62C3C2C26FB3400E897A1 /* RegistrationController.swift in Sources */,
 				E3CCEAD42C26A84C00634108 /* FeedController.swift in Sources */,
 				E3CCEADC2C26A86B00634108 /* ProfileController.swift in Sources */,

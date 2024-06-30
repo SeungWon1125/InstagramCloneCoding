@@ -11,18 +11,33 @@ class ProfileController: UIViewController {
     // MARK: - Variables
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
+    var user: User? {
+        didSet {
+            navigationItem.title = user?.userName
+        }
+    }
+    
     // MARK: - Life Cycle ⭐️
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         
+        fetchUser()
         setupCollectionView()
         setupNavigationBar()
     }
+    // MARK: - API
+    func fetchUser() {
+        UserService.fetchUser { user in
+            self.user = user
+            
+        }
+    }
+    
     // MARK: - Set up NavigationBar
     func setupNavigationBar() {
         navigationController?.navigationBar.backgroundColor = .systemPink
-        navigationItem.title = "Profile"
+        navigationItem.title = "Loading..."
     }
     
     // MARK: - Set up CollectionView
