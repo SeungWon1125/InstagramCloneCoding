@@ -13,7 +13,7 @@ class ProfileController: UIViewController {
     
     var user: User? {
         didSet {
-            navigationItem.title = user?.userName
+            collectionView.reloadData()
         }
     }
     
@@ -30,7 +30,7 @@ class ProfileController: UIViewController {
     func fetchUser() {
         UserService.fetchUser { user in
             self.user = user
-            
+            self.navigationItem.title = user.userName
         }
     }
     
@@ -80,6 +80,14 @@ extension ProfileController: UICollectionViewDataSource {
     // 콜렉션 뷰 헤더
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Cell.profileHeaderIdentifier, for: indexPath) as! ProfileHeader
+        
+        print("user fetching start..")
+        
+        if let user = user {
+            header.viewModel = ProfileHeaderViewModel(user: user)
+        } else {
+            print("아직 user정보가 없습니다.")
+        }
         return header
     }
 }

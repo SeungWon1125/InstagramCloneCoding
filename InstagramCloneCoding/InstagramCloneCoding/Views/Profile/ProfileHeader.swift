@@ -8,6 +8,13 @@
 import UIKit
 
 class ProfileHeader: UICollectionReusableView {
+    // MARK: - Variables
+    var viewModel: ProfileHeaderViewModel? {
+        didSet {
+            configure()
+        }
+    }
+    
     // MARK: - Properties
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
@@ -133,6 +140,26 @@ class ProfileHeader: UICollectionReusableView {
         self.addSubview(bottomDivider)
         
         setupConstraints()
+    }
+    // MARK: - Configure
+    func configure() {
+        print(#function)
+        guard let viewModel = viewModel else { return }
+        
+        // loadImage
+        guard let urlString = self.viewModel?.profileImageUrl else { return }
+        guard let url = URL(string: urlString) else { return }
+        
+        DispatchQueue.global().async {
+            guard let data = try? Data(contentsOf: url) else { return }
+            guard urlString == url.absoluteString else { return }
+            
+            DispatchQueue.main.async {
+                self.profileImageView.image = UIImage(data: data)
+            }
+        }
+        nameLabel.text = viewModel.fullName
+        
     }
     
     // MARK: - Set up Constraints
