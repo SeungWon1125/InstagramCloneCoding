@@ -25,6 +25,7 @@ class MainTabController: UITabBarController {
         if Auth.auth().currentUser == nil { // api호출이기 때문에
             DispatchQueue.main.async { // 이거는 메인쓰레드로 보내야 한다.
                 let controller = LoginController()
+                controller.delegate = self
                 let nav = UINavigationController(rootViewController: controller)
                 nav.modalPresentationStyle = .fullScreen
                 self.present(nav, animated: true, completion: nil)
@@ -74,4 +75,13 @@ class MainTabController: UITabBarController {
         nav.navigationBar.tintColor = .black
         return nav
     }
+}
+
+extension MainTabController: AuthenticationDelegate {
+    func authenticationDidComplete() {
+        print("DEBUG: Auth did complete.")
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }

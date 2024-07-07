@@ -18,7 +18,8 @@ class ProfileHeader: UICollectionReusableView {
     // MARK: - Properties
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "venom-7")
+//        iv.image = UIImage(named: "venom-7")
+        iv.backgroundColor = .lightGray
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.layer.cornerRadius = 80 / 2
@@ -27,7 +28,8 @@ class ProfileHeader: UICollectionReusableView {
     
     private let nameLabel: UILabel = {
         let lb = UILabel()
-        lb.text = "vv0n.2ya"
+//        lb.text = "vv0n.2ya"
+        lb.text = "Loading..."
         lb.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         lb.textAlignment = .center
         return lb
